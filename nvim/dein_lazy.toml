@@ -1,7 +1,7 @@
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 on_event = 'InsertCharPre'
-hook_post_source = '''
+hook_add = '''
   let g:deoplete#enable_at_startup = 1
   let g:deoplete#auto_complete_delay = 0
   let g:deoplete#auto_complete_start_length = 1
@@ -16,6 +16,93 @@ hook_post_source = '''
         \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
 '''
 on_i = 1
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+hook_add = '''
+  let g:unite_enable_start_insert = 1
+  let g:unite_source_history_yank_enable = 1
+  let g:unite_source_file_mru_limit = 200
+  nnoremap [unite] <Nop>
+  nmap <Leader>f [unite]
+
+  let g:unite_source_file_mru_filename_format = ''
+
+  nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+  nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
+  nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
+  nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
+  nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>
+  nnoremap <silent> [unite]a :<C-u>UniteBookmarkAdd<CR>
+
+  function! s:unite_my_settings()
+    nmap <buffer> <ESC> <Plug>(unite_exit)
+    imap <buffer> <C-w> <Plug>(unite_delete_backward_path)
+    nnoremap <silent><buffer><expr> s unite#smart_map('s', unite#do_action('split'))
+    inoremap <silent><buffer><expr> s unite#smart_map('s', unite#do_action('split'))
+    nnoremap <silent><buffer><expr> v unite#smart_map('v', unite#do_action('vsplit'))
+    inoremap <silent><buffer><expr> v unite#smart_map('v', unite#do_action('vsplit'))
+    nnoremap <silent><buffer><expr> <Tab> unite#smart_map('s', unite#do_action('tabopen'))
+    inoremap <silent><buffer><expr> <Tab> unite#smart_map('s', unite#do_action('tabopen'))
+    nnoremap <silent><buffer><expr> f unite#smart_map('f', unite#do_action('vimfiler'))
+    inoremap <silent><buffer><expr> f unite#smart_map('f', unite#do_action('vimfiler'))
+  endfunction
+'''
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_source = ['unite.vim']
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+hook_add = '''
+  let g:vimfiler_as_default_explorer = 1
+  let g:vimfiler_safe_mode_by_default = 0
+  let g:vimfiler_enable_auto_cd = 1
+  nnoremap <silent> <Leader>fe :<C-u>VimFilerBufferDir -quit<CR>
+  nnoremap <silent> <Leader>fi :VimFiler -buffer-name=explorer -split -winwidth=45 -simple -toggle -no-quit<Cr>
+
+  autocmd! FileType vimfiler call s:my_vimfiler_settings()
+  function! s:my_vimfiler_settings()
+    nmap     <buffer><expr><Cr> vimfiler#smart_cursor_map("\<Plug>(vimfiler_expand_tree)", "\<Plug>(vimfiler_edit_file)")
+    nnoremap <silent><buffer><expr> v
+          \ vimfiler#do_switch_action('vsplit')
+    nnoremap <silent><buffer><expr> s
+          \ vimfiler#do_switch_action('split')
+    nmap <buffer> q <Plug>(vimfiler_exit)
+    nmap <buffer> Q <Plug>(vimfiler_hide)
+  endfunction
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+hook_add = '''
+  imap <C-k>    <Plug>(neosnippet_expand_or_jump)
+  smap <C-k>    <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k>    <Plug>(neosnippet_expand_target)
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'Shougo/neopairs.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdcommenter'
+hook_add = '''
+	let NERDSpaceDelims = 1
+	let NERDCreateDefaultMappings = 0
+	nmap ,, <Plug>NERDCommenterToggle
+	vmap ,, <Plug>NERDCommenterToggle
+'''
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+hook_source = '''
+	let g:indentLine_char = '▏'
+	let g:indentLine_color_gui = '#000000'
+'''
 
 [[plugins]]
 repo = 'rcmdnk/vim-markdown'
