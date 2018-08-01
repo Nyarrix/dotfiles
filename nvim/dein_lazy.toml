@@ -1,6 +1,6 @@
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
-on_event = 'InsertCharPre'
+#on_event = 'InsertCharPre'
 hook_add = '''
   let g:deoplete#enable_at_startup = 1
   let g:deoplete#auto_complete_delay = 0
@@ -76,6 +76,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'Shougo/neosnippet'
+depends = ['neosnippet-snippets']
 hook_add = '''
   imap <C-k>    <Plug>(neosnippet_expand_or_jump)
   smap <C-k>    <Plug>(neosnippet_expand_or_jump)
@@ -89,15 +90,6 @@ repo = 'Shougo/neosnippet-snippets'
 repo = 'Shougo/neopairs.vim'
 
 [[plugins]]
-repo = 'scrooloose/nerdcommenter'
-hook_add = '''
-	let NERDSpaceDelims = 1
-	let NERDCreateDefaultMappings = 0
-	nmap ,, <Plug>NERDCommenterToggle
-	vmap ,, <Plug>NERDCommenterToggle
-'''
-
-[[plugins]]
 repo = 'Yggdroot/indentLine'
 hook_source = '''
 	let g:indentLine_char = '▏'
@@ -109,9 +101,6 @@ repo = 'rcmdnk/vim-markdown'
 
 [[plugins]]
 repo = 'jalvesaq/Nvim-R'
-
-[[plugins]]
-repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'cespare/vim-toml'
