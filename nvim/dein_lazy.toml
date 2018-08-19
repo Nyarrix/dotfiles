@@ -98,9 +98,11 @@ hook_source = '''
 
 [[plugins]]
 repo = 'rcmdnk/vim-markdown'
+on_ft = ['md', 'Rmd']
 
 [[plugins]]
 repo = 'jalvesaq/Nvim-R'
+on_ft = ['R', 'Rmd']
 
 [[plugins]]
 repo = 'cespare/vim-toml'
@@ -113,3 +115,6 @@ depends = ['cespare/vim-toml']
 [[plugins]]
 repo = 'lervag/vimtex'
 on_ft = ['tex']
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
