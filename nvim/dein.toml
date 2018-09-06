@@ -7,14 +7,14 @@ repo = 'crusoexia/vim-monokai'
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 depends = ['vim-airline-themes']
-
-[[plugins]]
-repo = 'vim-airline/vim-airline-themes'
 hook_add = '''
   let g:airline_powerline_fonts = 1
   let g:airline_theme = 'murmur'
-  let g:airline#extensions#tabline#enables = 1
+  let g:airline#extensions#tabline#enabled = 1
 '''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'

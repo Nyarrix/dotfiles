@@ -110,7 +110,7 @@ on_ft = ['toml']
 
 [[plugins]]
 repo = 'maralla/vim-toml-enhance'
-depends = ['cespare/vim-toml']
+on_source = ['vim-toml']
 
 [[plugins]]
 repo = 'lervag/vimtex'
@@ -118,3 +118,4 @@ on_ft = ['tex']
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
+on_ft = ['html', 'css', 'scss', 'sass']

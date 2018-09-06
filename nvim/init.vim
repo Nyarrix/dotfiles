@@ -42,6 +42,8 @@ if dein#check_install()
 endif
 "End dein Scripts-------------------------
 
+language C
+
 " mouse
 set mouse=a
 
@@ -70,7 +72,7 @@ set fileencodings=utf-8,iso-2022-jp,cp932,sjis,euc-jp
 " statusline
 set laststatus=2
 
-" enable clipboard on windows
+" enable clipboard on windows WSL
 if system('uname -a | grep Microsoft') != ""
   let g:clipboard = {
         \   'name': 'myClipboard',
