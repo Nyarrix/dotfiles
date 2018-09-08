@@ -47,9 +47,6 @@ language C
 " mouse
 set mouse=a
 
-" truecolor
-set t_Co=256
-
 " colorscheme
 colorscheme monokai
 
