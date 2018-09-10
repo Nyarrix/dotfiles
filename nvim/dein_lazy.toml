@@ -108,9 +108,9 @@ on_ft = ['R', 'Rmd']
 repo = 'cespare/vim-toml'
 on_ft = ['toml']
 
-[[plugins]]
-repo = 'maralla/vim-toml-enhance'
-on_source = ['vim-toml']
+#[[plugins]]
+#repo = 'maralla/vim-toml-enhance'
+#on_source = ['vim-toml']
 
 [[plugins]]
 repo = 'lervag/vimtex'

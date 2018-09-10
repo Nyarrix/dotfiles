@@ -27,3 +27,10 @@ hook_add = '''
 	nmap ,, <Plug>NERDCommenterToggle
 	vmap ,, <Plug>NERDCommenterToggle
 '''
+
+[[plugins]]
+repo = "osyo-manga/vim-precious"
+depends = ['osyo-manga/vim-precious']
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
