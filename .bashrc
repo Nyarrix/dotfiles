@@ -2,6 +2,9 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# for debug
+# echo "I AM .bashrc"
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -117,3 +120,6 @@ if ! shopt -oq posix; then
 fi
 
 # export PATH=$HOME/.local/bin:$HOME/.linuxbrew/bin:$PATH
+
+# for debug
+# echo "end bashrc"
