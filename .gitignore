@@ -1,3 +1,4 @@
 .DS_Store
 fish/fishd*
 fish/local_config.fish
+fish/fish_variables
