@@ -30,7 +30,26 @@ hook_add = '''
 
 [[plugins]]
 repo = "osyo-manga/vim-precious"
-depends = ['osyo-manga/vim-precious']
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+
+[[plugins]]
+repo = 'ncm2/ncm2'
+depends  = ['ncm2-path', 'ncm2-bufword']
+hook_add = '''
+	autocmd BufEnter * call ncm2#enable_for_buffer()
+	set completeopt=noinsert,menuone,noselect
+	inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+	inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+'''
+
+[[plugins]]
+repo = 'ncm2/ncm2-bufword'
+
+[[plugins]]
+repo = 'ncm2/ncm2-path'
+

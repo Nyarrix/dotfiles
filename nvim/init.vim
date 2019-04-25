@@ -42,7 +42,7 @@ if dein#check_install()
 endif
 "End dein Scripts-------------------------
 
-language C
+" language C
 
 " mouse
 set mouse=a
@@ -84,3 +84,4 @@ if system('uname -a | grep Microsoft') != ""
         \   'cache_enabled': 1,
         \ }
 endif
+

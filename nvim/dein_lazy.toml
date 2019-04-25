@@ -1,21 +1,25 @@
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-#on_event = 'InsertCharPre'
-hook_add = '''
-  let g:deoplete#enable_at_startup = 1
-  let g:deoplete#auto_complete_delay = 0
-  let g:deoplete#auto_complete_start_length = 1
-  let g:deoplete#enable_camel_case = 0
-  let g:deoplete#enable_ignore_case = 0
-  let g:deoplete#enable_refresh_always = 0
-  let g:deoplete#enable_smart_case = 1
-  let g:deoplete#file#enable_buffer_path = 1
-  let g:deoplete#max_list = 10000
-  inoremap <expr><tab> pumvisible() ? "\<C-n>" :
-        \ neosnippet#expandable_or_jumpable() ?
-        \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
-'''
-on_i = 1
+# completion
+
+# [[plugins]]
+# repo = 'Shougo/deoplete.nvim'
+# on_event = 'InsertEnter'
+# hook_add = '''
+	# let g:deoplete#enable_at_startup = 1
+	# let g:deoplete#auto_complete_delay = 0
+	# let g:deoplete#auto_complete_start_length = 1
+	# let g:deoplete#enable_camel_case = 0
+	# let g:deoplete#enable_ignore_case = 0
+	# let g:deoplete#enable_refresh_always = 0
+	# let g:deoplete#enable_smart_case = 1
+	# let g:deoplete#file#enable_buffer_path = 1
+	# let g:deoplete#max_list = 10000
+	# inoremap <expr><tab> pumvisible() ? "\<C-n>" :
+				# \ neosnippet#expandable_or_jumpable() ?
+				# \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+# '''
+# on_i = 1
+
+# unite.vim and related
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
@@ -74,20 +78,51 @@ hook_add = '''
   endfunction
 '''
 
+# R lang
+
 [[plugins]]
-repo = 'Shougo/neosnippet'
+repo = 'rcmdnk/vim-markdown'
+on_ft = ['md', 'rmd']
+
+[[plugins]]
+repo = 'jalvesaq/Nvim-R'
+on_ft = ['r', 'rmd']
+
+[[plugins]]
+repo = 'gaalcaras/ncm-R'
+depends = ['Nvim-R']
+on_ft = ['r', 'rmd']
+
+# neosnippet
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+on_event = 'InsertEnter'
 depends = ['neosnippet-snippets']
 hook_add = '''
-  imap <C-k>    <Plug>(neosnippet_expand_or_jump)
-  smap <C-k>    <Plug>(neosnippet_expand_or_jump)
-  xmap <C-k>    <Plug>(neosnippet_expand_target)
+  " imap <C-k>    <Plug>(neosnippet_expand_or_jump)
+  " smap <C-k>    <Plug>(neosnippet_expand_or_jump)
+  " xmap <C-k>    <Plug>(neosnippet_expand_target)
+	let g:neosnippet#snippets_directory='~/.config/nvim/snippets' 
+'''
+
+[[plugins]]
+repo = 'ncm2/ncm2-neosnippet'
+on_event = 'InsertEnter'
+depends  = ['neosnippet.vim', 'neosnippet-snippets']
+hook_post_source = '''
+	imap <expr><C-k> neosnippet#expandable() ? ncm2_neosnippet#expand_or("\<Tab>", 'n') : neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<Tab>"
+	smap <expr><C-k> neosnippet#expandable() ? ncm2_neosnippet#expand_or("\<Tab>", 'n') : neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<Tab>"
 '''
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
+on_event = 'InsertEnter'
 
 [[plugins]]
 repo = 'Shougo/neopairs.vim'
+
+# other
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
@@ -95,14 +130,6 @@ hook_source = '''
 	let g:indentLine_char = '▏'
 	let g:indentLine_color_gui = '#000000'
 '''
-
-[[plugins]]
-repo = 'rcmdnk/vim-markdown'
-on_ft = ['md', 'Rmd']
-
-[[plugins]]
-repo = 'jalvesaq/Nvim-R'
-on_ft = ['R', 'Rmd']
 
 [[plugins]]
 repo = 'cespare/vim-toml'
@@ -115,6 +142,20 @@ on_ft = ['toml']
 [[plugins]]
 repo = 'lervag/vimtex'
 on_ft = ['tex']
+hook_post_source = '''
+au User Ncm2Plugin call ncm2#register_source({
+            \ 'name' : 'vimtex',
+            \ 'priority': 1,
+            \ 'subscope_enable': 1,
+            \ 'complete_length': 1,
+            \ 'scope': ['tex'],
+            \ 'matcher': {'name': 'prefix', 'key': 'word'},
+            \ 'mark': 'tex',
+            \ 'word_pattern': '\w+',
+            \ 'complete_pattern': g:vimtex#re#ncm,
+            \ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
+            \ })
+'''
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
