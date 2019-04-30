@@ -125,13 +125,6 @@ repo = 'Shougo/neopairs.vim'
 # other
 
 [[plugins]]
-repo = 'Yggdroot/indentLine'
-hook_source = '''
-	let g:indentLine_char = '▏'
-	let g:indentLine_color_gui = '#000000'
-'''
-
-[[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = ['toml']
 
