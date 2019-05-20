@@ -88,7 +88,7 @@ on_ft = ['md', 'rmd']
 repo = 'jalvesaq/Nvim-R'
 on_ft = ['r', 'rmd']
 hook_post_source = '''
-	let r_indent_align_args = 0
+	let g:r_indent_align_args = 0
 '''
 
 [[plugins]]
