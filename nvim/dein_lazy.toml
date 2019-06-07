@@ -1,25 +1,4 @@
-# completion
-
-# [[plugins]]
-# repo = 'Shougo/deoplete.nvim'
-# on_event = 'InsertEnter'
-# hook_add = '''
-	# let g:deoplete#enable_at_startup = 1
-	# let g:deoplete#auto_complete_delay = 0
-	# let g:deoplete#auto_complete_start_length = 1
-	# let g:deoplete#enable_camel_case = 0
-	# let g:deoplete#enable_ignore_case = 0
-	# let g:deoplete#enable_refresh_always = 0
-	# let g:deoplete#enable_smart_case = 1
-	# let g:deoplete#file#enable_buffer_path = 1
-	# let g:deoplete#max_list = 10000
-	# inoremap <expr><tab> pumvisible() ? "\<C-n>" :
-				# \ neosnippet#expandable_or_jumpable() ?
-				# \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
-# '''
-# on_i = 1
-
-# unite.vim and related
+# darkpower
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
@@ -78,23 +57,13 @@ hook_add = '''
   endfunction
 '''
 
-# R lang
+# other
 
 [[plugins]]
-repo = 'rcmdnk/vim-markdown'
-on_ft = ['md', 'rmd']
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
 
-[[plugins]]
-repo = 'jalvesaq/Nvim-R'
-on_ft = ['r', 'rmd']
-hook_post_source = '''
-	let g:r_indent_align_args = 0
-'''
-
-[[plugins]]
-repo = 'gaalcaras/ncm-R'
-depends = ['Nvim-R']
-on_ft = ['r', 'rmd']
+# completion
 
 # neosnippet
 
@@ -125,16 +94,6 @@ on_event = 'InsertEnter'
 [[plugins]]
 repo = 'Shougo/neopairs.vim'
 
-# other
-
-[[plugins]]
-repo = 'cespare/vim-toml'
-on_ft = ['toml']
-
-#[[plugins]]
-#repo = 'maralla/vim-toml-enhance'
-#on_source = ['vim-toml']
-
 [[plugins]]
 repo = 'lervag/vimtex'
 on_ft = ['tex']
@@ -157,6 +116,26 @@ au User Ncm2Plugin call ncm2#register_source({
 repo = 'mattn/emmet-vim'
 on_ft = ['html', 'css', 'scss', 'sass']
 
+# R lang
+
+[[plugins]]
+repo = 'rcmdnk/vim-markdown'
+on_ft = ['md', 'rmd']
+
+[[plugins]]
+repo = 'jalvesaq/Nvim-R'
+on_ft = ['r', 'rmd']
+hook_post_source = '''
+	let g:r_indent_align_args = 0
+'''
+
+[[plugins]]
+repo = 'gaalcaras/ncm-R'
+depends = ['Nvim-R']
+on_ft = ['r', 'rmd']
+
+# python
+
 [[plugins]]
 repo = 'davidhalter/jedi-vim'
 on_ft = ['python']
@@ -165,6 +144,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'zchee/deoplete-jedi'
+repo = 'ncm2/ncm2-jedi'
 on_ft = ['python']
 
