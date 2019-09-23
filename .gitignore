@@ -1,4 +1,11 @@
 .DS_Store
+
+# fish
 fish/fishd*
 fish/local_config.fish
 fish/fish_variables
+
+# fisher
+fish/conf.d
+fish/completions
+fish/functions/__*.fish
