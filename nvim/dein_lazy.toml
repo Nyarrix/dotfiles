@@ -99,6 +99,7 @@ repo = 'lervag/vimtex'
 on_ft = ['tex']
 hook_add = '''
 au User Ncm2Plugin call ncm2#register_source({
+au FileType tex call ncm2#register_source({
             \ 'name' : 'vimtex',
             \ 'priority': 1,
             \ 'subscope_enable': 1,
