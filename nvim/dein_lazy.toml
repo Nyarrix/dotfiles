@@ -98,7 +98,6 @@ repo = 'Shougo/neopairs.vim'
 repo = 'lervag/vimtex'
 on_ft = ['tex']
 hook_add = '''
-au User Ncm2Plugin call ncm2#register_source({
 au FileType tex call ncm2#register_source({
             \ 'name' : 'vimtex',
             \ 'priority': 1,
@@ -148,3 +147,8 @@ hook_add = '''
 repo = 'ncm2/ncm2-jedi'
 on_ft = ['python']
 
+# style
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+depends = ['vimfiler']
+on_event = 'VimEnter'
