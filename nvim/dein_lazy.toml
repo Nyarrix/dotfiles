@@ -148,7 +148,7 @@ repo = 'ncm2/ncm2-jedi'
 on_ft = ['python']
 
 # style
-[[plugins]]
-repo = 'ryanoasis/vim-devicons'
-depends = ['vimfiler']
-on_event = 'VimEnter'
+# [[plugins]]
+# repo = 'ryanoasis/vim-devicons'
+# depends = ['vimfiler']
+# on_event = 'VimEnter'

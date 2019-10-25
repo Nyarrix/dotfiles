@@ -53,3 +53,5 @@ repo = 'ncm2/ncm2-bufword'
 [[plugins]]
 repo = 'ncm2/ncm2-path'
 
+[[plugins]]
+repo = 'tpope/vim-surround'
