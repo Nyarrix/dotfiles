@@ -55,3 +55,6 @@ repo = 'ncm2/ncm2-path'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'jalvesaq/vimcmdline'
