@@ -2,6 +2,7 @@
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
+on_event = 'VimEnter'
 hook_add = '''
   let g:unite_enable_start_insert = 1
   let g:unite_source_history_yank_enable = 1
@@ -38,12 +39,13 @@ on_source = ['unite.vim']
 
 [[plugins]]
 repo = 'Shougo/vimfiler.vim'
+on_event = 'VimEnter'
 hook_add = '''
   let g:vimfiler_as_default_explorer = 1
   let g:vimfiler_safe_mode_by_default = 0
   let g:vimfiler_enable_auto_cd = 1
   nnoremap <silent> <Leader>fe :<C-u>VimFilerBufferDir -quit<CR>
-  nnoremap <silent> <Leader>fi :VimFiler -buffer-name=explorer -split -winwidth=45 -simple -toggle -no-quit<Cr>
+  nnoremap <silent> <Leader>fi :VimFiler -buffer-name=explorer -split -winwidth=45 -toggle -no-quit -columns=devicons<Cr>
 
   autocmd! FileType vimfiler call s:my_vimfiler_settings()
   function! s:my_vimfiler_settings()
@@ -148,7 +150,13 @@ repo = 'ncm2/ncm2-jedi'
 on_ft = ['python']
 
 # style
-# [[plugins]]
-# repo = 'ryanoasis/vim-devicons'
-# depends = ['vimfiler']
-# on_event = 'VimEnter'
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+on_event = 'VimEnter'
+depends = ['vimfiler.vim', 'unite.vim']
+hook_add = '''
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_vimfiler = 1
+let g:webdevicons_enable_unite = 1
+let g:webdevicons_enable_airline_statusline = 1
+'''
