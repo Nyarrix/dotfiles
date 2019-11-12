@@ -71,6 +71,9 @@ set fileencodings=utf-8,iso-2022-jp,cp932,sjis,euc-jp
 " statusline
 set laststatus=2
 
+" Not yunk on pasting with visual mode
+vnoremap p "_dP
+
 " enable clipboard on windows WSL
 if system('uname -a | grep Microsoft') != ""
 	let g:clipboard = {
