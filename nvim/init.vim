@@ -33,14 +33,16 @@ if dein#load_state(s:dein_dir)
 	call dein#save_state()
 endif
 
-filetype plugin indent on
-syntax enable
-
 " If you want to install not installed plugins on startup.
 if dein#check_install()
 	call dein#install()
 endif
+"reference of dein Scripts: https://qiita.com/sugamondo/items/fcaf210ca86d65bcaca8
 "End dein Scripts-------------------------
+
+" init
+syntax enable
+filetype plugin indent on
 
 " mouse
 set mouse=a
@@ -59,9 +61,6 @@ set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 " Displaying Line Number
 " set number
 set relativenumber
-
-" syntax highlight
-syntax on
 
 " Encoding & ff
 set encoding=utf-8
