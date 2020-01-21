@@ -1,5 +1,4 @@
 # darkpower
-
 [[plugins]]
 repo = 'Shougo/unite.vim'
 on_event = 'VimEnter'
@@ -59,16 +58,7 @@ hook_add = '''
   endfunction
 '''
 
-# other
-
-[[plugins]]
-repo = 'cespare/vim-toml'
-on_ft = ['toml']
-
-# completion
-
 # neosnippet
-
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
 on_event = 'InsertEnter'
@@ -96,6 +86,7 @@ on_event = 'InsertEnter'
 [[plugins]]
 repo = 'Shougo/neopairs.vim'
 
+# latex
 [[plugins]]
 repo = 'lervag/vimtex'
 on_ft = ['tex']
@@ -114,12 +105,12 @@ au FileType tex call ncm2#register_source({
             \ })
 '''
 
+# html css
 [[plugins]]
 repo = 'mattn/emmet-vim'
 on_ft = ['html', 'css', 'scss', 'sass']
 
 # R lang
-
 [[plugins]]
 repo = 'rcmdnk/vim-markdown'
 on_ft = ['md', 'rmd']
@@ -137,7 +128,6 @@ depends = ['Nvim-R']
 on_ft = ['r', 'rmd']
 
 # python
-
 [[plugins]]
 repo = 'davidhalter/jedi-vim'
 on_ft = ['python']
@@ -160,3 +150,9 @@ let g:webdevicons_enable_vimfiler = 1
 let g:webdevicons_enable_unite = 1
 let g:webdevicons_enable_airline_statusline = 1
 '''
+
+# other
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
+
