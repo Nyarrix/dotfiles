@@ -1,0 +1,5 @@
+" enable surround.vim
+set surround
+
+" Not yunk on pasting with visual mode
+vnoremap p "_dP
